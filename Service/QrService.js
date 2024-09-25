@@ -20,7 +20,6 @@ const qrService = {
       // await creatDatabase()
       await useDatabase();
       // await createTable()
-      // const typeObj = { standart: 1, discount: 1 };
       const resultObj = {};
       const types = [
         "standart",
@@ -34,6 +33,7 @@ const qrService = {
         "event-config",
         "school",
         "other_service",
+        "partner"
       ];
 
       const objectLength = Object.keys(typeObj).length;
@@ -75,30 +75,27 @@ const qrService = {
             //   console.log("Папка qr_images уже существует.");
             // }
             const qr_path = `public/qr_images/${unique_token}.png`;
+            // const qrfilePath = path.join(
+            //   path.dirname(fileURLToPath(import.meta.url)),
+            //   "..",
+            //   "..",
+            //   "..",
+            //   "var",
+            //   "www",
+            //   "museum.gorc-ka.am",
+            //   "storage",
+            //   "app",
+            //   "public",
+            //   "qr_images",
+            //   `${unique_token}.png`
+            // );
             const qrfilePath = path.join(
               path.dirname(fileURLToPath(import.meta.url)),
               "..",
               "..",
-              "..",
-              "var",
-              "www",
-              "museum.gorc-ka.am",
-              "storage",
-              "app",
-              "public",
               "qr_images",
               `${unique_token}.png`
             );
-            // const qrfilePath = path.join(
-            //   // path.dirname(fileURLToPath(import.meta.url)),
-            //   // "https://manage.museumsarmenia.am",
-            //   // "storage",
-            //   // "app",
-            //   // "public",
-            //   "/",
-            //   "qr_images",
-            //   `${unique_token}.png`
-            // );
             console.log(qrfilePath);
 
             const find_pathdb = result[0].find((item) => {
