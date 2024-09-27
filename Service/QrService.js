@@ -75,27 +75,27 @@ const qrService = {
             //   console.log("Папка qr_images уже существует.");
             // }
             const qr_path = `public/qr_images/${unique_token}.png`;
-            // const qrfilePath = path.join(
-            //   path.dirname(fileURLToPath(import.meta.url)),
-            //   "..",
-            //   "..",
-            //   "..",
-            //   "var",
-            //   "www",
-            //   "museum.gorc-ka.am",
-            //   "storage",
-            //   "app",
-            //   "public",
-            //   "qr_images",
-            //   `${unique_token}.png`
-            // );
             const qrfilePath = path.join(
               path.dirname(fileURLToPath(import.meta.url)),
               "..",
               "..",
+              "..",
+              "var",
+              "www",
+              "museum.gorc-ka.am",
+              "storage",
+              "app",
+              "public",
               "qr_images",
               `${unique_token}.png`
             );
+            // const qrfilePath = path.join(
+            //   path.dirname(fileURLToPath(import.meta.url)),
+            //   "..",
+            //   "..",
+            //   "qr_images",
+            //   `${unique_token}.png`
+            // );
             console.log(qrfilePath);
 
             const find_pathdb = result[0].find((item) => {
